@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32x32.png">
+  <link rel="stylesheet" href="/dist/index.css">  
+  <title>Frontend Mentor | Interactive card details form</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <!-- <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+  </style> -->
+</head>
+<body>
+  <main class="root-Container">
+    
+    <section class="leftSide">
+      
+      <div class="rootCardContainer">
+        
+        <img src="/assets/images/bg-card-front.png" id="cardFront"/>
+
+          <div class="cardInfoContainer">
+
+            <img src="/assets/images/card-logo.svg" id="cardLogo"/>
+    
+            <div id="txtCardNum">
+              0000  0000  0000  0000
+            </div>
+            
+            <div class="nameDateSection">
+              <div id="txtholderName">
+                 Jane Appleseed
+              </div>
+              <div class="dateContainer">
+                <p id="cardMonth">00</p>
+                <p>/</p>
+                <p id="cardYear">00</p>
+            </div>
+            </div>
+    
+          </div>
+
+      </div>
+
+      <div class="rootCardBackContainer">
+        <img src="/assets/images/bg-card-back.png" id="cardBack"/>
+        <div id="txtccvNum">000</div>
+      </div>
+
+    </section>
+
+    <section class="rightSide">
+
+      <form action="#" method="post">
+      
+          <!-- <label for="uname">CARDHOLDER NAME</label> -->
+          <p id="lblcardHolder">CARDHOLDER NAME</p>
+          <input type="text" name="uname" placeholder="e.g. Jane Appleseed"  id="holderInput" required>
+
+          <!-- <label for="cardNum">CARD Number</label> -->
+          <p id="lblcardNum">CARD NUMBER</p>
+          <input type="text" name="cardNum" placeholder="e.g.1234 5678 9123 0000"  id="cardNumInput" required>
+          <p id="errorFormat">Wrong format, numbers only</p>
+
+          <div class="expiryDate">
+            <p id="lblExpiry">EXP. DATE(MM/YY)   cvc</p>
+            <div class="expiryEntry">
+              <input type="text" placeholder="MM" id="monthInput" maxlength="2" required >
+              
+              <input type="text" placeholder="YY" id="yearInput" maxlength="2" required >
+              <input type="text" placeholder="e.g. 123" id="cvvInput" maxlength="3" required>
+            </div>
+          </div>
+      
+      <div class="errorMessage">
+        <p id="errorMessage1">Can't be blank</p>
+        <p id="errorMessage2">Can't be blank</p>
+      </div>
+        <button id="btnConfirm">Confirm</button>
+      </form>
+
+      <section class="thanks">
+        <img src="/assets/images/icon-complete.svg" id="completeLogo"/>
+        <p id="thankYou">THANK YOU!</p>
+        <p id="thanksMessage">We've added your card details</p>
+        <button id="btnContinue">Continue</button>
+      </section>
+    </section>
+  </main>
+  <script src ="index.js"></script>
+</body>
+
+</html>
+
