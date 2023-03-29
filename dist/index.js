@@ -21,7 +21,7 @@ var errorMessage2 = document.querySelector('#errorMessage2')
 var btnConfirm = document.querySelector('#btnConfirm')
 
 const inputHandler = function (e){
-    txtHolderName.innerHTML = e.target.value;
+    txtHolderName.innerHTML = e.target.value.toUpperCase();
 }
 const cardNumInput = function(e){
   txtCardNumber.innerHTML = e.target.value
