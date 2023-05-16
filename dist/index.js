@@ -16,7 +16,6 @@ var tbCvvInput = document.querySelector('#cvvInput');
 var errorMessage1 = document.querySelector('#errorMessage1')
 var errorMessage2 = document.querySelector('#errorMessage2')
 var wrongFormat = document.querySelector('#errorFormat')
-// var errorMessage = document.getElementsByClassName('errorMessage')
 
 // Button
 var btnConfirm = document.querySelector('#btnConfirm')
@@ -25,21 +24,14 @@ const inputHandler = function (e){
     txtHolderName.innerHTML = e.target.value.toUpperCase();
 }
 const cardNumInput = function(e){
- var value = tbCardNumInput.value.trim();
- if(value === ''){
-  wrongFormat.innerHTML = 'Cant be blank';
- }else if(!Number.isInteger(Number(value))){
-  wrongFormat.innerHTML = 'Wrong format, numbers only';
- }else{
-  wrongFormat.innerHTML = '';
- }
+txtCardNumber.innerHTML = e.target.value;
 }
 
 const cardMonthInput = function(e){
   if(Number(e.target.value) <= 12){
     txtCardMonth.innerHTML = e.target.value
   }else{
-    // set an error that month can't be greater than 12
+    txtCardMonth.innerHTML = 12;
   }
 }
 
@@ -56,14 +48,30 @@ tbCardMonthInput.addEventListener('input',cardMonthInput)
 tbCardYearInput.addEventListener('input',cardYearInput)
 tbCvvInput.addEventListener('input',cardCvvInput)
 
-btnConfirm.addEventListener('click',btnFunc)
+btnConfirm.addEventListener('click',(e)=>{
+  e.preventDefault();
+    var accountNum = tbCardNumInput.value.trim();
+    var monthInput = tbCardMonthInput.value.trim();
+    var yearInput = tbCardYearInput.value.trim();
+    var cvvInput = tbCvvInput.value.trim();
+    
+    if(accountNum === ''){
+      wrongFormat.style.display = 'block';
+      wrongFormat.textContent = 'Cant be blank';
+    }
+     else if(/\D/.test(accountNum)){
+      wrongFormat.style.display = 'block';
+    }
+     else{
+      wrongFormat.style.display = 'none';
+    }
+    if(monthInput === '' || yearInput === '' || cvvInput === ''){
+      errorMessage1.style.display = 'block';
+      errorMessage2.style.display = 'block';
+    } else{
+      errorMessage1.style.display = 'none';
+      errorMessage2.style.display = 'none';
+    }
+    
+});
 
-function btnFunc(){
-if(tbCardMonthInput.value == "" || tbCardYearInput.value == "" || tbCvvInput.value){
-  errorMessage1.style.display = 'block'
-  errorMessage2.style.display = 'block'
-}else{
-  // errorMessage1.style.display = 'none'
-  // errorMessage2.style.display = 'none'
-}
-}

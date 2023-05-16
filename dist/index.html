@@ -63,16 +63,16 @@
 
           <!-- <label for="cardNum">CARD Number</label> -->
           <p id="lblcardNum">CARD NUMBER</p>
-          <input type="text" name="cardNum" placeholder="e.g.1234 5678 9123 0000"  id="cardNumInput" required>
-          <p id="errorFormat"></p>
+          <input type="text" name="cardNum" placeholder="e.g.1234 5678 9123 0000"  id="cardNumInput">
+          <p id="errorFormat">Wrong format, numbers only</p>
 
           <div class="expiryDate">
             <p id="lblExpiry">EXP. DATE(MM/YY)   cvc</p>
             <div class="expiryEntry">
-              <input type="text" placeholder="MM" id="monthInput" maxlength="2" required >
+              <input type="text" placeholder="MM" id="monthInput" maxlength="2"  >
               
-              <input type="text" placeholder="YY" id="yearInput" maxlength="2" required >
-              <input type="text" placeholder="e.g. 123" id="cvvInput" maxlength="3" required>
+              <input type="text" placeholder="YY" id="yearInput" maxlength="2"  >
+              <input type="text" placeholder="e.g. 123" id="cvvInput" maxlength="3" >
             </div>
           </div>
       
