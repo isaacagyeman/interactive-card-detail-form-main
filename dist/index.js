@@ -19,6 +19,8 @@ var wrongFormat = document.querySelector('#errorFormat')
 
 // Button
 var btnConfirm = document.querySelector('#btnConfirm')
+var thanksCard = document.querySelector('.thanks');
+var formCard = document.querySelector('.cardForm')
 
 const inputHandler = function (e){
     txtHolderName.innerHTML = e.target.value.toUpperCase();
@@ -50,10 +52,16 @@ tbCvvInput.addEventListener('input',cardCvvInput)
 
 btnConfirm.addEventListener('click',(e)=>{
   e.preventDefault();
+  var holderName = tbHolderInput.value.trim();
     var accountNum = tbCardNumInput.value.trim();
     var monthInput = tbCardMonthInput.value.trim();
     var yearInput = tbCardYearInput.value.trim();
     var cvvInput = tbCvvInput.value.trim();
+
+    if(holderName !== '' || accountNum !== '' || monthInput !== '' || yearInput !== '' || cvvInput !== ''){
+      formCard.style.display = 'none';
+    thanksCard.style.display = 'flex'
+    }
     
     if(accountNum === ''){
       wrongFormat.style.display = 'block';
@@ -72,6 +80,8 @@ btnConfirm.addEventListener('click',(e)=>{
       errorMessage1.style.display = 'none';
       errorMessage2.style.display = 'none';
     }
+
+    
     
 });
 

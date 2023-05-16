@@ -7,7 +7,12 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+body{
     font-family: 'Space-Grotesk';
+    font-size: .83rem;
+
 }
 
 .root-Container{
@@ -60,9 +65,11 @@
 
 
 #txtCardNum{
-    margin-top: 20%;
+    margin-top: 16%;
     color: hsl(0, 0%, 100%);
+    font-size: 1.5rem;
 }
+
 
 .dateContainer{
     display: flex;
@@ -98,6 +105,7 @@ form{
     display: flex;
     flex-direction: column;
     padding: 0em 1em 1em 1em;
+    /* display: none; */
 }
 
 .thanks{
