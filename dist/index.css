@@ -12,11 +12,13 @@
 
 .root-Container{
     width: 100%;
+    max-width: 1440px;
     height: 100vh;
     display: flex;
 }
 .leftSide{
     width: 35vw;
+    max-width: 100%;
     height: 100vh;
     background-image: url('/assets/images/bg-main-desktop.png');
     background-repeat: repeat;
@@ -85,6 +87,7 @@ This is the Right side of the container *
 ****************************************/
 .rightSide{
     width: 75%;
+    /* max-width: 900px; */
     display: flex;
     flex-direction: column;
     align-items: center;

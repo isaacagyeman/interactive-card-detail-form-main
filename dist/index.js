@@ -15,6 +15,7 @@ var tbCvvInput = document.querySelector('#cvvInput');
 // Error Fields
 var errorMessage1 = document.querySelector('#errorMessage1')
 var errorMessage2 = document.querySelector('#errorMessage2')
+var wrongFormat = document.querySelector('#errorFormat')
 // var errorMessage = document.getElementsByClassName('errorMessage')
 
 // Button
@@ -24,7 +25,14 @@ const inputHandler = function (e){
     txtHolderName.innerHTML = e.target.value.toUpperCase();
 }
 const cardNumInput = function(e){
-  txtCardNumber.innerHTML = e.target.value
+ var value = tbCardNumInput.value.trim();
+ if(value === ''){
+  wrongFormat.innerHTML = 'Cant be blank';
+ }else if(!Number.isInteger(Number(value))){
+  wrongFormat.innerHTML = 'Wrong format, numbers only';
+ }else{
+  wrongFormat.innerHTML = '';
+ }
 }
 
 const cardMonthInput = function(e){
